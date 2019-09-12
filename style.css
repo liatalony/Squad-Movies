@@ -1,0 +1,21 @@
+.eachMovieArticle {
+    margin: 0 auto;
+    width: 80%;
+    height: 90%;
+    border: 5px solid black;
+    padding: 20px;
+    overflow: hidden
+}
+
+main {
+    margin: 10px;
+    padding: 20px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 50px;
+    align-items: center;
+}
+
+
