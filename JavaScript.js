@@ -15,7 +15,7 @@ function showMovies(movieData) {
     console.log(movieData);
     console.log(movieData.gsx$bestpicturenominations.$t);
 
-    if (movieData.gsx$winners.$t==1) {
+    if (movieData.gsx$winners.$t == 1) {
 
         let newArticle = document.createElement("article");
         newArticle.classList.add("eachMovieArticle");
@@ -28,13 +28,14 @@ function showMovies(movieData) {
 
 
         templateCopy.querySelector("h1").textContent = movieData.gsx$bestpicturenominations.$t;
-        templateCopy.querySelector(".year").textContent = `YEAR: ${movieData.gsx$year.$t}`;
-        templateCopy.querySelector(".winner").textContent = `WINNER: ${movieData.gsx$winners.$t}`;
-        templateCopy.querySelector(".otherNominations").textContent = `OTHER NOMINATIONS: ${movieData.gsx$othernominations.$t}`;
-        templateCopy.querySelector(".studio").textContent = `STUDIOS/PRODUCERS: ${movieData.gsx$studio.$t}`;
-        templateCopy.querySelector(".otherAwards").textContent = `OTHER AWARDS: ${movieData.gsx$otherawards.$t}`;
+        templateCopy.querySelector(".movie_image").src = `images_movies/${movieData.gsx$image.$t}.jpg`;
+    templateCopy.querySelector(".year").textContent = `YEAR: ${movieData.gsx$year.$t}`;
+    templateCopy.querySelector(".winner").textContent = `WINNER: ${movieData.gsx$winners.$t}`;
+    templateCopy.querySelector(".otherNominations").textContent = `OTHER NOMINATIONS: ${movieData.gsx$othernominations.$t}`;
+    templateCopy.querySelector(".studio").textContent = `STUDIOS/PRODUCERS: ${movieData.gsx$studio.$t}`;
+    templateCopy.querySelector(".otherAwards").textContent = `OTHER AWARDS: ${movieData.gsx$otherawards.$t}`;
 
-        document.querySelector(`#movie${movieData.gsx$id.$t}`).appendChild(templateCopy);
-    }
+    document.querySelector(`#movie${movieData.gsx$id.$t}`).appendChild(templateCopy);
+}
 
 }
