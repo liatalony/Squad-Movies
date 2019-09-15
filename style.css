@@ -1,7 +1,56 @@
-html{
+html {
     font-size: 15px;
+    scroll-behavior: smooth;
 }
 
+
+/*MODAL-----------------------------------------*/
+.hide {
+    display: none;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    background-color: #fefefe;
+    border: 1px solid #7c1f17;
+    margin: auto;
+    margin-top: 1em;
+    padding: 2em;
+    width: max-content;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+}
+
+.modal-movie-image {
+    max-height: 87vh;
+    width: auto;
+}
+
+.modal-text {
+    padding-left: 2em;
+    max-width: 100%;
+}
+
+p{
+    max-width: 500px;
+}
+
+.modal-open{
+    overflow-y: hidden;
+}
+
+/*MODAL-----------------------------------------*/
 
 .eachMovieArticle {
     margin: 0 auto;
@@ -11,7 +60,7 @@ html{
     padding: 20px;
 }
 
-h1.header{
+h1.header {
     font-size: 4em;
     text-align: center;
 }
@@ -27,7 +76,6 @@ main {
     align-items: center;
 }
 
-img{
+img {
     width: 100%;
 }
-

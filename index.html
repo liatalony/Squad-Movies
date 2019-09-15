@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,38 @@
 </head>
 
 <body>
-   <h1 class="header">Oscar-winning movies</h1>
+    <header id="header">
+        <h1 class="header">Oscar-winning movies</h1>
+    </header>
     <main>
+        <div class="modal-background hide">
+            <div class="modal-content">
+                <img src="" alt="MovieImage" class="modal-movie-image" />
+                <section class="modal-text">
+                    <h3 class="modal-movie-name">NAME</h3>
+                    <p class="year">YEAR </p>
+                    <p class="Plot">Plot: <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat sed lectus vestibulum mattis. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra.</p>
+                    <p class="otherNominations">OTHER NOMINATIONS</p>
+                    <p class="studio">STUDIO</p>
+                    <p class="otherAwards">OTHER AWARDS</p>
+                    <section class="otherNominees">
+                        <p class="otherNominees">Other Nominees:</p>
+                        <ul class="nominees"></ul>
+
+                    </section>
+                </section>
+            </div>
+        </div>
     </main>
+    <a class="jump" href="#header">Go to Top</a>
     <template>
-    <h1>Name</h1>
+        <img class="movie_image" alt="imageMovie" src="">
+        <h1>Name</h1>
         <p class="year">YEAR </p>
-        <img class="movie_image" alt="imageMovie" src="images_movies/amadeus.jpg">
-        <p class="winner">WINNER</p>
-        <p class="otherNominations">OTHER NOMINATIONS</p>
-        <p class="studio">STUDIO</p>
-        <p class="otherAwards">OTHER AWARDS</p>
-        <p class="BoxOffice">BOX OFFICE</p>
     </template>
+
+    <footer id="footer"></footer>
     <script defer src="JavaScript.js"></script>
 </body>
+
 </html>
