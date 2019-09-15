@@ -1,5 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #110e0e;
+  --link-color: #1a1717;
+  --link-hover-color: #800000;
+  --color-4: #dfca4e;
+  --color-5: #3c3030;
+
+  --primary-font: "Julius Sans One", sans-serif;
+  --secondary-font: "Quicksand", sans-serif;
+  --main-text-color: #000;
+
+  --white-space: 1rem;
+}
+
 html{
     font-size: 15px;
+    font-family: var(--primary-font);
 }
 
 
@@ -30,4 +52,3 @@ main {
 img{
     width: 100%;
 }
-
