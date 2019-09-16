@@ -6,6 +6,7 @@ fetch(EndPoint).then(res => res.json()).then(showStuff);
 function showStuff(data) {
     const myArray = data.feed.entry;
     console.log(myArray);
+    myArray.sort(compareYearFromNew);
     myArray.forEach(showMovies);
 }
 
