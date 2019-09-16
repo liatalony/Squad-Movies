@@ -24,38 +24,37 @@ function showStuff(data) {
     const myArray = data.feed.entry;
 
     console.log(myArray);
-    const buttonNewest = document.querySelector("button.newest");
-    const buttonOldest = document.querySelector("button.oldest");
-    const buttonAZ = document.querySelector("button.a_z");
-    const buttonZA = document.querySelector("button.z_a");
+    const select = document.querySelector("select");
     const main = document.querySelector("main");
-
-    buttonNewest.addEventListener("click", function () {
-        myArray.sort(compareYearFromNew);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
-
-    buttonOldest.addEventListener("click", function () {
-        myArray.sort(compareYearFromOld);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
-
-    buttonAZ.addEventListener("click", function () {
-        myArray.sort(compareAbc);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
-
-    buttonZA.addEventListener("click", function () {
-        myArray.sort(compareCba);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
 
     myArray.sort(compareYearFromNew);
     myArray.forEach(showMovies);
+
+    select.addEventListener("change", function () {
+        if (select.value == "Newest") {
+            myArray.sort(compareYearFromNew);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+
+        if (select.value == "Oldest") {
+            myArray.sort(compareYearFromOld);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+
+        if (select.value == "A-Z") {
+            myArray.sort(compareAbc);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+
+        if (select.value == "Z-A") {
+            myArray.sort(compareCba);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+    })
 }
 
 function compareYearFromNew(a, b) {
