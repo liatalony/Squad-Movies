@@ -15,15 +15,47 @@ modal.addEventListener("click", () => {
 
 const spreadsheetID = "16ZPc11NiIeO2ph_wkMDJMeKjS_evZ_kcxIw51oE_bdQ";
 
+//https://spreadsheets.google.com/feeds/list/16ZPc11NiIeO2ph_wkMDJMeKjS_evZ_kcxIw51oE_bdQ/od6/public/values?alt=json`
 const EndPoint = `https://spreadsheets.google.com/feeds/list/${spreadsheetID}/od6/public/values?alt=json`;
 fetch(EndPoint).then(res => res.json()).then(showStuff);
 
 function showStuff(data) {
+
     const myArray = data.feed.entry;
     //    console.log(myArray);
+    myArray.sort(compareYearFromNew);
     myArray.forEach(showMovies);
 }
 
+              function compareYearFromNew(a,b) {
+                if (a.gsx$year.$t > b.gsx$year.$t) {
+                  return -1;
+                }
+                if (a.gsx$year.$t < b.gsx$year.$t) {
+                  return 1;
+                }
+                return 0;
+              }
+
+              function compareYearFromOld(a, b) {
+                if (a.gsx$year.$t < b.gsx$year.$t) {
+                  return -1;
+                }
+                if (a.gsx$year.$t > b.gsx$year.$t) {
+                  return 1;
+                }
+                return 0;
+              }
+
+              function compareAbc(a, b) {
+                if (a.gsx$bestpicturenominations.$t < b.gsx$bestpicturenominations.$t) {
+                  return -1;
+                }
+                if (a.gsx$bestpicturenominations.$t > b.gsx$bestpicturenominations.$t) {
+                  return 1;
+                }
+                return 0;
+              }
 
 function showMovies(movieData) {
 
