@@ -9,6 +9,41 @@ function showStuff(data) {
     console.log(myArray);
 
     myArray.sort(compareYearFromNew);
+    myArray.forEach(showMovies);
+}
+
+              function compareYearFromNew(a,b) {
+                if (a.gsx$year.$t > b.gsx$year.$t) {
+                  return -1;
+                }
+                if (a.gsx$year.$t < b.gsx$year.$t) {
+                  return 1;
+                }
+                return 0;
+              }
+
+              function compareYearFromOld(a, b) {
+                if (a.gsx$year.$t < b.gsx$year.$t) {
+                  return -1;
+                }
+                if (a.gsx$year.$t > b.gsx$year.$t) {
+                  return 1;
+                }
+                return 0;
+              }
+
+              function compareAbc(a, b) {
+                if (a.gsx$bestpicturenominations.$t < b.gsx$bestpicturenominations.$t) {
+                  return -1;
+                }
+                if (a.gsx$bestpicturenominations.$t > b.gsx$bestpicturenominations.$t) {
+                  return 1;
+                }
+                return 0;
+              }
+
+
+    myArray.sort(compareYearFromNew);
 
     myArray.forEach(showMovies);
 }
@@ -42,7 +77,6 @@ function showStuff(data) {
               }
               return 0;
             }
-
 
 
 function showMovies(movieData) {
