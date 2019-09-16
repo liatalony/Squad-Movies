@@ -22,45 +22,85 @@ fetch(EndPoint).then(res => res.json()).then(showStuff);
 function showStuff(data) {
 
     const myArray = data.feed.entry;
-    //    console.log(myArray);
+
+    console.log(myArray);
+    const buttonNewest = document.querySelector("button.newest");
+    const buttonOldest = document.querySelector("button.oldest");
+    const buttonAZ = document.querySelector("button.a_z");
+    const buttonZA = document.querySelector("button.z_a");
+    const main = document.querySelector("main");
+
+    buttonNewest.addEventListener("click", function () {
+        myArray.sort(compareYearFromNew);
+        main.innerHTML = "";
+        myArray.forEach(showMovies);
+    });
+
+    buttonOldest.addEventListener("click", function () {
+        myArray.sort(compareYearFromOld);
+        main.innerHTML = "";
+        myArray.forEach(showMovies);
+    });
+
+    buttonAZ.addEventListener("click", function () {
+        myArray.sort(compareAbc);
+        main.innerHTML = "";
+        myArray.forEach(showMovies);
+    });
+
+    buttonZA.addEventListener("click", function () {
+        myArray.sort(compareCba);
+        main.innerHTML = "";
+        myArray.forEach(showMovies);
+    });
+
     myArray.sort(compareYearFromNew);
     myArray.forEach(showMovies);
 }
 
-              function compareYearFromNew(a,b) {
-                if (a.gsx$year.$t > b.gsx$year.$t) {
-                  return -1;
-                }
-                if (a.gsx$year.$t < b.gsx$year.$t) {
-                  return 1;
-                }
-                return 0;
-              }
+function compareYearFromNew(a, b) {
+    if (a.gsx$year.$t > b.gsx$year.$t) {
+        return -1;
+    }
+    if (a.gsx$year.$t < b.gsx$year.$t) {
+        return 1;
+    }
+    return 0;
+}
 
-              function compareYearFromOld(a, b) {
-                if (a.gsx$year.$t < b.gsx$year.$t) {
-                  return -1;
-                }
-                if (a.gsx$year.$t > b.gsx$year.$t) {
-                  return 1;
-                }
-                return 0;
-              }
+function compareYearFromOld(a, b) {
+    if (a.gsx$year.$t < b.gsx$year.$t) {
+        return -1;
+    }
+    if (a.gsx$year.$t > b.gsx$year.$t) {
+        return 1;
+    }
+    return 0;
+}
 
-              function compareAbc(a, b) {
-                if (a.gsx$bestpicturenominations.$t < b.gsx$bestpicturenominations.$t) {
-                  return -1;
-                }
-                if (a.gsx$bestpicturenominations.$t > b.gsx$bestpicturenominations.$t) {
-                  return 1;
-                }
-                return 0;
-              }
+function compareAbc(a, b) {
+    if (a.gsx$bestpicturenominations.$t < b.gsx$bestpicturenominations.$t) {
+        return -1;
+    }
+    if (a.gsx$bestpicturenominations.$t > b.gsx$bestpicturenominations.$t) {
+        return 1;
+    }
+    return 0;
+}
+
+function compareCba(a, b) {
+    if (a.gsx$bestpicturenominations.$t < b.gsx$bestpicturenominations.$t) {
+        return 1;
+    }
+    if (a.gsx$bestpicturenominations.$t > b.gsx$bestpicturenominations.$t) {
+        return -1;
+    }
+    return 0;
+}
 
 function showMovies(movieData) {
 
     //    console.log(movieData);
-
     if (movieData.gsx$winners.$t == 1) {
 
         let newArticle = document.createElement("article");
@@ -113,10 +153,10 @@ function showMovies(movieData) {
 }
 
 const UP = document.querySelector(".jump");
-window.onscroll = function(){
-     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    UP.style.display = "block";
-  } else {
-    UP.style.display = "none";
-  }
+window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        UP.style.display = "block";
+    } else {
+        UP.style.display = "none";
+    }
 }
