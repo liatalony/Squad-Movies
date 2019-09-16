@@ -160,3 +160,27 @@ window.onscroll = function () {
         UP.style.display = "none";
     }
 }
+
+var input = document.getElementById('search');
+input.addEventListener("keyup", Filter);
+
+
+
+function Filter() {
+    // Declare variables
+    var filter, main, article, h1, i, txtValue;
+    filter = input.value.toUpperCase();
+    main = document.querySelector("main");
+    article = main.getElementsByClassName("eachMovieArticle");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < article.length; i++) {
+        a = article[i].getElementsByTagName("h1")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            article[i].style.display = "flex";
+        } else {
+            article[i].style.display = "none";
+        }
+    }
+}
