@@ -41,9 +41,9 @@ function showMovies(movieData) {
             body.classList.add("modal-open");
             modal.querySelector(".modal-movie-image").src = `images_movies/${movieData.gsx$image.$t}.jpg`;
             modal.querySelector(".modal-movie-name").textContent = movieData.gsx$bestpicturenominations.$t;
-            modal.querySelector(".year").textContent = movieData.gsx$year.$t;
+            modal.querySelector(".modal-year").textContent = movieData.gsx$year.$t;
             modal.querySelector(".otherNominations").textContent = `Other Nomimations: ${movieData.gsx$othernominations.$t}`;
-            modal.querySelector(".studio").textContent = `Studio: ${movieData.gsx$studio.$t}`;
+            modal.querySelector(".studio").textContent = `Studio/Producer: ${movieData.gsx$studio.$t}`;
             modal.querySelector(".otherAwards").textContent = `Other Awards: ${movieData.gsx$otherawards.$t}`;
             console.log(movieData);
 
@@ -73,9 +73,18 @@ function showMovies(movieData) {
         const templateCopy = template.cloneNode(true);
 
         templateCopy.querySelector("h1").textContent = movieData.gsx$bestpicturenominations.$t;
-        templateCopy.querySelector(".movie_image").src = `images_movies/${movieData.gsx$image.$t}.jpg`;
-        templateCopy.querySelector(".year").textContent = `YEAR: ${movieData.gsx$year.$t}`;
+        templateCopy.querySelector(".movie_image").style.backgroundImage = `url("images_movies/${movieData.gsx$image.$t}.jpg")`;
+        templateCopy.querySelector(".year").textContent = movieData.gsx$year.$t;
 
         document.querySelector(`#movie${movieData.gsx$id.$t}`).appendChild(templateCopy);
     }
+}
+
+const UP = document.querySelector(".jump");
+window.onscroll = function(){
+     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    UP.style.display = "block";
+  } else {
+    UP.style.display = "none";
+  }
 }
