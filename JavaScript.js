@@ -118,6 +118,7 @@ function showMovies(movieData) {
             modal.querySelector(".otherNominations").textContent = `Other Nomimations: ${movieData.gsx$othernominations.$t}`;
             modal.querySelector(".studio").textContent = `Studio/Producer: ${movieData.gsx$studio.$t}`;
             modal.querySelector(".otherAwards").textContent = `Other Awards: ${movieData.gsx$otherawards.$t}`;
+            modal.querySelector(".Plot").textContent = movieData.gsx$plot.$t;
 
             // ⇓⇓⇓ Fetching the DB again in order to display the movies that were nomminated but didnt win ⇓⇓⇓
 

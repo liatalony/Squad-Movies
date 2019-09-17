@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* :root {
   --bg-color: #110e0e;
   --link-color: #1a1717;
@@ -19,13 +15,20 @@ html {
   --white-space: 1rem; */
 /*}*/
 
-    
 /*     font-family: var(--primary-font); */
+
+
+/*General Page ----------------------------------
+▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     font-size: 100%;
-    font-family: century gothic, sans-serif;
+    font-family: century gothic, serif;
+    font-style: normal;
 }
 
 header {
@@ -36,7 +39,56 @@ header {
     padding-bottom: 0;
 }
 
-/*MODAL-----------------------------------------*/
+.jump {
+    background-color: gold;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    z-index: 2;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    box-shadow: 5px 5px 5px;
+    display: none;
+}
+
+.header {
+    font-size: 4em;
+    text-align: center;
+}
+
+main {
+    padding: 1.5em;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 1.5em;
+    background-color: #181b1d;
+}
+
+.arrange,
+.search, option {
+    padding: .5em;
+    border-radius: 25px;
+    background-color: #2c3134;
+    border: none;
+    margin: 0;
+    color: white;
+}
+
+.search{
+    margin-left: 1em;
+}
+
+/*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
+general Page------------------------------------*/
+
+/*MODAL-----------------------------------------
+▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ */
 .hide {
     display: none;
 }
@@ -82,24 +134,12 @@ p {
     overflow-y: hidden;
 }
 
-/*MODAL-----------------------------------------*/
+/*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
+MODAL-----------------------------------------*/
 
-.jump{
-    background-color: gold;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 1em;
-    border: none;
-    border-radius: 10px;
-    z-index: 2;
-    text-decoration: none;
-    color: black;
-    font-weight:bolder;
-    box-shadow: 5px 5px 5px;
-    display: none;
+/*Movie Article----------------------------------
+▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ */
 
-}
 .eachMovieArticle {
     margin: auto;
     width: 100%;
@@ -139,21 +179,6 @@ p {
     -webkit-box-orient: vertical;
 }
 
-.header {
-    font-size: 4em;
-    text-align: center;
-}
-
-main {
-    padding: 1.5em;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-rows: 1fr;
-    grid-gap: 1.5em;
-    background-color: #181b1d;
-}
-
 .movie_image {
     width: 100%;
     padding-bottom: 140%;
@@ -164,13 +189,12 @@ main {
     border-top-right-radius: 5px;
 }
 
-.arrange, .search{
-    padding: .5em;
-    border-radius: 25px;
-    margin: 0;
-}
+/*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
+Movie Article-----------------------------------*/
 
-@media all and (max-width:600px) {
+
+
+@media all and (max-width:720px) {
     main {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
@@ -178,17 +202,17 @@ main {
         padding: .7em;
     }
 
-    .header{
+    .header {
         font-size: 2em;
         margin: 0;
     }
 
-    .frontName{
+    .frontName {
         font-size: .8rem;
         line-height: 14px;
     }
 
-    .year{
+    .year {
         font-size: .7rem;
     }
 
@@ -202,13 +226,14 @@ main {
         margin-top: .5em;
     }
 
-    .modal-movie-image{
+    .modal-movie-image {
         max-width: 80%;
         height: auto;
         margin: auto;
     }
 
-    .eachMovieArticle, .movie_image{
+    .eachMovieArticle,
+    .movie_image {
         border-radius: 2px;
     }
 }
