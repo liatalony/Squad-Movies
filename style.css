@@ -154,6 +154,10 @@ MODAL-----------------------------------------*/
     position: relative;
 }
 
+.eachMovieArticle:hover{
+    cursor: pointer;
+}
+
 .frontName,
 .year {
     margin: .7em;
