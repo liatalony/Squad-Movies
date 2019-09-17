@@ -242,10 +242,23 @@ Movie Article-----------------------------------*/
         overflow-y: auto;
         display: grid;
         grid-template-columns: 1fr;
-        max-width: 85%;
-        padding: 1em;
+        max-width: 90%;
+        padding: .5em;
         padding-bottom: 2em;
-        margin-top: .5em;
+        margin-top: 1em;
+    }
+
+    .modal-year{
+        text-align: center;
+    }
+
+    .modal-movie-name{
+        text-align: center;
+    }
+
+    .modal-text{
+        margin: auto;
+        padding: 0;
     }
 
     .modal-movie-image {
@@ -258,4 +271,9 @@ Movie Article-----------------------------------*/
     .movie_image {
         border-radius: 2px;
     }
+
+    .modal-text {
+    padding-left: 0;
+    max-width: 100%;
+}
 }
