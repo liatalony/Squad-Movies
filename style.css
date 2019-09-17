@@ -39,6 +39,19 @@ header {
     padding-bottom: 0;
 }
 
+footer {
+    background-color: #121314;
+    font-size: .7rem;
+    padding: .5em;
+    padding-left: 1.5em;
+    color: #b4b4b4;
+    width: 100%;
+}
+
+footer p {
+    width: 100%;
+}
+
 .jump {
     background-color: gold;
     position: fixed;
@@ -71,7 +84,8 @@ main {
 }
 
 .arrange,
-.search, option {
+.search,
+option {
     padding: .5em;
     border-radius: 25px;
     background-color: #2c3134;
@@ -80,7 +94,7 @@ main {
     color: white;
 }
 
-.search{
+.search {
     margin-left: 1em;
 }
 
@@ -126,7 +140,7 @@ general Page------------------------------------*/
     max-width: 100%;
 }
 
-p {
+.modal-content p {
     max-width: 500px;
 }
 
@@ -154,7 +168,7 @@ MODAL-----------------------------------------*/
     position: relative;
 }
 
-.eachMovieArticle:hover{
+.eachMovieArticle:hover {
     cursor: pointer;
 }
 
@@ -204,6 +218,10 @@ Movie Article-----------------------------------*/
         grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         grid-gap: .5rem;
         padding: .7em;
+    }
+
+    footer{
+        padding-left: .7em;
     }
 
     .header {
