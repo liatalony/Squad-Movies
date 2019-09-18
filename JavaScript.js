@@ -1,6 +1,14 @@
+window.onload = function () {
+    document.getElementById('search').value = '';  //clear the input field on reload
+}
+
+
 const body = document.querySelector("body");
 
 //close the modal when clicked
+const modalContent = document.querySelector(".modal-content");
+const modalText = document.querySelector(".modal-text");
+const modalImage = document.querySelector(".modal-image-container");
 const modal = document.querySelector(".modal-background");
 modal.addEventListener("click", () => {
     modal.classList.add("hide");
@@ -138,6 +146,10 @@ function showMovies(movieData) {
             }
 
             modal.classList.remove("hide");
+            modalContent.classList.add("animationAppear");
+            modalText.classList.add("animationOpacityRise");
+            modalImage.classList.add("animationOpacityRise");
+
         });
 
         document.querySelector("main").appendChild(newArticle);
@@ -165,6 +177,10 @@ window.onscroll = function () {
 var input = document.getElementById('search');
 input.addEventListener("keyup", Filter);
 
+console.log(input.value);
+if (input.value !=""){
+    Filter();
+}
 
 
 function Filter() {

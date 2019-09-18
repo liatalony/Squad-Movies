@@ -22,6 +22,8 @@
 ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ */
 html {
     scroll-behavior: smooth;
+    margin: 0;
+    font-size: 20px;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
     font-size: 100%;
     font-family: century gothic, serif;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 header {
@@ -78,9 +81,10 @@ main {
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 1fr;
+    /*    grid-auto-rows: 1fr;*/
     grid-gap: 1.5em;
     background-color: #181b1d;
+    min-height: 100vh;
 }
 
 .arrange,
@@ -112,33 +116,63 @@ general Page------------------------------------*/
     z-index: 10;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
-    max-width: 90%;
-    max-height: 90%;
+    width: 80%;
+    height: 80%;
     background-color: #4f5457;
-    margin: auto;
-    margin-top: 2em;
-    padding: 2em;
-    width: max-content;
+    margin: 20px auto;
+    padding: 1em;
+    /*    width: max-content;*/
+    /*
     display: grid;
     grid-template-columns: max-content 1fr;
+*/
+    display: flex;
+    flex-direction: row;
     box-shadow: 10px 10px 10px;
     border-radius: 5px;
+    overflow-y: auto;
+}
+
+.modal-image-container {
+    height: 100%;
+    width: 50%;
+    align-self: center;
+    justify-content: center;
+
+    opacity: 0;
 }
 
 .modal-movie-image {
-    max-height: 70vh;
+    display: block;
+    max-height: 100%;
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+    overflow-y: scroll;
 }
 
 .modal-text {
-    padding-left: 2em;
-    max-width: 100%;
+    width: 50%;
+    margin-left: 2em;
+    font-size: 1em;
+    overflow-y: scroll;
+    margin: 1em;
+
+    opacity: 0;
 }
+
+.modal-movie-name {
+    font-weight: bold;
+}
+
+.modal-year {}
 
 .modal-content p {
     max-width: 500px;
@@ -147,6 +181,52 @@ general Page------------------------------------*/
 .modal-open {
     overflow-y: hidden;
 }
+
+.animationAppear {
+    animation: appear .3s;
+}
+
+.animationOpacityRise{
+    animation: opacityRise .5s .3s forwards;
+}
+
+@keyframes appear {
+    0% {
+        background-color: red;
+        max-width: 0%;
+        max-height: 0%;
+        background-color: #4f6789;
+        margin: 0 auto;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    20% {
+        max-width: 0%;
+        max-height: 80%;
+    }
+
+    100% {
+        background-color: yellow;
+        max-width: 80%;
+        max-height: 80%;
+        background-color: #4f5457;
+        margin: 0 auto;
+        margin-top: 2em;
+        padding: 1em;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+}
+
+@keyframes opacityRise{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
 /*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
 MODAL-----------------------------------------*/
@@ -170,6 +250,8 @@ MODAL-----------------------------------------*/
 
 .eachMovieArticle:hover {
     cursor: pointer;
+    transition: 5s ease-in-out;
+    bottom: 2px;
 }
 
 .frontName,
@@ -220,7 +302,7 @@ Movie Article-----------------------------------*/
         padding: .7em;
     }
 
-    footer{
+    footer {
         padding-left: .7em;
     }
 
@@ -239,6 +321,7 @@ Movie Article-----------------------------------*/
     }
 
     .modal-content {
+        /*
         overflow-y: auto;
         display: grid;
         grid-template-columns: 1fr;
@@ -246,24 +329,36 @@ Movie Article-----------------------------------*/
         padding: .5em;
         padding-bottom: 2em;
         margin-top: 1em;
+*/
+        flex-direction: column;
+
+
     }
 
-    .modal-year{
+    .modal-year {
         text-align: center;
     }
 
-    .modal-movie-name{
+    .modal-movie-name {
         text-align: center;
     }
 
-    .modal-text{
+    .modal-text {
+        height: 50%;
         margin: auto;
+        margin-top: 1em;
         padding: 0;
     }
 
+    .modal-image-container {
+        height: 50%;
+        width: 100%;
+        margin: 10px;
+    }
+
     .modal-movie-image {
-        max-width: 80%;
-        height: auto;
+        max-height: 100%;
+        width: auto;
         margin: auto;
     }
 
@@ -273,7 +368,8 @@ Movie Article-----------------------------------*/
     }
 
     .modal-text {
-    padding-left: 0;
-    max-width: 100%;
-}
+        width: 100%;
+        padding-left: 0;
+        max-width: 100%;
+    }
 }
