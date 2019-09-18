@@ -212,6 +212,8 @@ Movie Article-----------------------------------*/
 
 
 
+
+
 @media all and (max-width:720px) {
     main {
         display: grid;
@@ -220,7 +222,7 @@ Movie Article-----------------------------------*/
         padding: .7em;
     }
 
-    footer{
+    footer {
         padding-left: .7em;
     }
 
@@ -248,15 +250,15 @@ Movie Article-----------------------------------*/
         margin-top: 1em;
     }
 
-    .modal-year{
+    .modal-year {
         text-align: center;
     }
 
-    .modal-movie-name{
+    .modal-movie-name {
         text-align: center;
     }
 
-    .modal-text{
+    .modal-text {
         margin: auto;
         padding: 0;
     }
@@ -273,7 +275,54 @@ Movie Article-----------------------------------*/
     }
 
     .modal-text {
-    padding-left: 0;
-    max-width: 100%;
+        padding-left: 0;
+        max-width: 100%;
+    }
 }
+
+
+/*----------FRONTPAGE-------------------*/
+
+
+.logo{
+    max-width: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mainfrontpage{
+    display: block;
+    min-height: 100vh;
+}
+
+.textfrontpage{
+    margin-top: 7em;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: white;
+    text-decoration: underline;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.button{
+    text-decoration: none;
+    background-color: #2c3134;
+    color: white;
+    padding: .5em;
+    border-radius: 25px;
+    display:;
+    margin-left: auto;
+    margin-right: auto;
+
 }
