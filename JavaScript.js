@@ -141,6 +141,9 @@ function showMovies(movieData) {
             }
 
             modal.classList.remove("hide");
+            modalContent.classList.add("animationAppear");
+            modalText.classList.add("animationOpacityRise");
+            modalImage.classList.add("animationOpacityRise");
         });
 
         document.querySelector("main").appendChild(newArticle);
