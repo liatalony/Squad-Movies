@@ -74,7 +74,7 @@ footer p {
     width: 600px;
     margin: auto;
     max-width: 100%;
-    font-family: futura-pt,sans-serif;
+    font-family: futura-pt, sans-serif;
     font-weight: 100;
     color: #E8A43A;
 }
@@ -103,18 +103,19 @@ option {
     margin-left: 1em;
 }
 
-.Back{
+.Back {
     width: 32px;
     height: auto;
 }
 
-.TheOscars{
+.TheOscars {
     display: block;
     margin: auto;
     width: 600px;
     height: auto;
     max-width: 100%;
 }
+
 /*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
 general Page------------------------------------*/
 
@@ -155,6 +156,8 @@ general Page------------------------------------*/
 .modal-text {
     padding-left: 2em;
     max-width: 100%;
+    max-height: 95%;
+    overflow-y: auto;
 }
 
 .modal-content p {
@@ -278,6 +281,10 @@ Movie Article-----------------------------------*/
     .modal-text {
         margin: auto;
         padding: 0;
+        overflow-y: hidden;
+        padding-left: 0;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .modal-movie-image {
@@ -291,30 +298,27 @@ Movie Article-----------------------------------*/
         border-radius: 2px;
     }
 
-    .modal-text {
-        padding-left: 0;
-        max-width: 100%;
-    }
 }
 
 
 /*----------FRONTPAGE-------------------*/
 
 
-.logo{
-    width:700px;
+.logo {
+    width: 700px;
     max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.mainfrontpage{
+
+.mainfrontpage {
     display: block;
     min-height: 100vh;
     max-width: 100%;
 }
 
-.textfrontpage{
+.textfrontpage {
     margin-top: 7em;
     color: white;
     margin-left: auto;
@@ -323,7 +327,7 @@ Movie Article-----------------------------------*/
 }
 
 
-a{
+a {
     color: white;
     text-decoration: underline;
     margin-left: auto;
@@ -331,7 +335,7 @@ a{
     text-align: center;
 }
 
-.button{
+.button {
     text-decoration: none;
     background-color: #2c3134;
     color: white;
