@@ -151,6 +151,7 @@ general Page------------------------------------*/
 
 .modal-movie-image {
     max-height: 70vh;
+    opacity: 0;
 }
 
 .modal-text {
@@ -158,6 +159,7 @@ general Page------------------------------------*/
     max-width: 100%;
     max-height: 95%;
     overflow-y: auto;
+    opacity: 0;
 }
 
 .modal-content p {
@@ -306,8 +308,8 @@ Movie Article-----------------------------------*/
     }
 
     .modal-content {
-        overflow-y: auto;
-        display: grid;
+        overflow-y: scroll;
+        display: block;
         grid-template-columns: 1fr;
         max-width: 90%;
         padding: .5em;
@@ -333,6 +335,7 @@ Movie Article-----------------------------------*/
     }
 
     .modal-movie-image {
+        display: block;
         max-width: 80%;
         height: auto;
         margin: auto;
