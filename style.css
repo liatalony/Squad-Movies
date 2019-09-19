@@ -206,9 +206,6 @@ general Page------------------------------------*/
 }
 
 @keyframes opacityRise {
-    from {
-        opacity: 0;
-    }
 
     to {
         opacity: 1;

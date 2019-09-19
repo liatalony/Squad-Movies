@@ -3,7 +3,7 @@ const body = document.querySelector("body");
 //close the modal when clicked
 const modalContent = document.querySelector(".modal-content");
 const modalText = document.querySelector(".modal-text");
-const modalImage = document.querySelector(".modal-image-container");
+const modalImage = document.querySelector(".modal-movie-image");
 const modal = document.querySelector(".modal-background");
 modal.addEventListener("click", () => {
     modal.classList.add("hide");
