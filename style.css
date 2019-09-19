@@ -53,7 +53,7 @@ footer p {
 }
 
 .jump {
-    background-color: gold;
+    background-color: #E8A43A;
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -69,8 +69,14 @@ footer p {
 }
 
 .header {
-    font-size: 4em;
-    text-align: center;
+    font-size: 2em;
+    text-align: right;
+    width: 600px;
+    margin: auto;
+    max-width: 100%;
+    font-family: futura-pt,sans-serif;
+    font-weight: 100;
+    color: #E8A43A;
 }
 
 main {
@@ -98,6 +104,18 @@ option {
     margin-left: 1em;
 }
 
+.Back{
+    width: 32px;
+    height: auto;
+}
+
+.TheOscars{
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: auto;
+    max-width: 100%;
+}
 /*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
 general Page------------------------------------*/
 
@@ -290,13 +308,10 @@ Movie Article-----------------------------------*/
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
 }
 .mainfrontpage{
     display: block;
     min-height: 100vh;
-    padding: 1em;
-    margin: 0;
 }
 
 .textfrontpage{
@@ -306,7 +321,6 @@ Movie Article-----------------------------------*/
     margin-right: auto;
     text-align: center;
 }
-
 
 
 a{
@@ -326,8 +340,8 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: max-content;
     margin-top: 35px;
     border: 2px solid #E8A43A;
+    width: max-content;
 
 }
