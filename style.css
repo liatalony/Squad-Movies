@@ -29,6 +29,7 @@ body {
     font-size: 100%;
     font-family: century gothic, serif;
     font-style: normal;
+    width: 100%;
 }
 
 header {
@@ -45,7 +46,6 @@ footer {
     padding: .5em;
     padding-left: 1.5em;
     color: #b4b4b4;
-    width: 100%;
 }
 
 footer p {
@@ -81,7 +81,6 @@ footer p {
 
 main {
     padding: 1.5em;
-    max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
@@ -312,6 +311,7 @@ Movie Article-----------------------------------*/
 .mainfrontpage{
     display: block;
     min-height: 100vh;
+    max-width: 100%;
 }
 
 .textfrontpage{
