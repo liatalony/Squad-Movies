@@ -24,38 +24,37 @@ function showStuff(data) {
     const myArray = data.feed.entry;
 
     console.log(myArray);
-    const buttonNewest = document.querySelector("button.newest");
-    const buttonOldest = document.querySelector("button.oldest");
-    const buttonAZ = document.querySelector("button.a_z");
-    const buttonZA = document.querySelector("button.z_a");
+    const select = document.querySelector("select");
     const main = document.querySelector("main");
-
-    buttonNewest.addEventListener("click", function () {
-        myArray.sort(compareYearFromNew);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
-
-    buttonOldest.addEventListener("click", function () {
-        myArray.sort(compareYearFromOld);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
-
-    buttonAZ.addEventListener("click", function () {
-        myArray.sort(compareAbc);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
-
-    buttonZA.addEventListener("click", function () {
-        myArray.sort(compareCba);
-        main.innerHTML = "";
-        myArray.forEach(showMovies);
-    });
 
     myArray.sort(compareYearFromNew);
     myArray.forEach(showMovies);
+
+    select.addEventListener("change", function () {
+        if (select.value == "Newest") {
+            myArray.sort(compareYearFromNew);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+
+        if (select.value == "Oldest") {
+            myArray.sort(compareYearFromOld);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+
+        if (select.value == "A-Z") {
+            myArray.sort(compareAbc);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+
+        if (select.value == "Z-A") {
+            myArray.sort(compareCba);
+            main.innerHTML = "";
+            myArray.forEach(showMovies);
+        };
+    })
 }
 
 function compareYearFromNew(a, b) {
@@ -103,6 +102,8 @@ function showMovies(movieData) {
     //    console.log(movieData);
     if (movieData.gsx$winners.$t == 1) {
 
+        document.querySelector("main").appendChild(modal);
+
         let newArticle = document.createElement("article");
         newArticle.classList.add("eachMovieArticle");
         newArticle.setAttribute("id", `movie${movieData.gsx$id.$t}`);
@@ -117,7 +118,7 @@ function showMovies(movieData) {
             modal.querySelector(".otherNominations").textContent = `Other Nomimations: ${movieData.gsx$othernominations.$t}`;
             modal.querySelector(".studio").textContent = `Studio/Producer: ${movieData.gsx$studio.$t}`;
             modal.querySelector(".otherAwards").textContent = `Other Awards: ${movieData.gsx$otherawards.$t}`;
-            console.log(movieData);
+            modal.querySelector(".Plot").textContent = movieData.gsx$plot.$t;
 
             // ⇓⇓⇓ Fetching the DB again in order to display the movies that were nomminated but didnt win ⇓⇓⇓
 
@@ -127,7 +128,7 @@ function showMovies(movieData) {
                 const myArray2 = moreData.feed.entry;
                 myArray2.forEach(function (noms) {
 
-                    // Choosing only the movies that have the same year as the winning movie and are not the winner
+                    // Choosing only the movies that have the same year as the winning movie and are not the winner, by comparing all of te movies in the database
                     if (noms.gsx$year.$t == movieData.gsx$year.$t && noms.gsx$winners.$t == 0) {
                         const list = document.createElement("li");
                         list.textContent = noms.gsx$bestpicturenominations.$t;
@@ -158,5 +159,29 @@ window.onscroll = function () {
         UP.style.display = "block";
     } else {
         UP.style.display = "none";
+    }
+}
+
+var input = document.getElementById('search');
+input.addEventListener("keyup", Filter);
+
+
+
+function Filter() {
+    // Declare variables
+    var filter, main, article, h1, i, txtValue;
+    filter = input.value.toUpperCase();
+    main = document.querySelector("main");
+    article = main.getElementsByClassName("eachMovieArticle");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < article.length; i++) {
+        a = article[i].getElementsByTagName("h1")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            article[i].style.display = "flex";
+        } else {
+            article[i].style.display = "none";
+        }
     }
 }

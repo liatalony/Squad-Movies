@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zox1rkt.css">
+</head>
+
+<body>
+    <header id="header">
+        <img src="img/BackToHome.png" alt="back" class="Back">
+        <img src="img/LOGO_OSCARS_3D-color.png" alt="The Oscars" class="TheOscars">
+        <h1 class="header">Best Picture Awards</h1>
+        <select class="arrange" name="arrange by">
+            <option class="newest">Newest</option>
+            <option class="oldest">Oldest</option>
+            <option class="a_z">A-Z</option>
+            <option class="z_a">Z-A</option>
+        </select>
+        <input id="search" type="text" class="search" placeholder="Search movie name">
+    </header>
+
+    <div class="modal-background hide">
+        <div class="modal-content">
+            <img src="" alt="MovieImage" class="modal-movie-image" />
+            <section class="modal-text">
+                <h3 class="modal-movie-name">NAME</h3>
+                <p class="modal-year">YEAR </p>
+                <p class="Plot">Plot: <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Feugiat sed lectus vestibulum mattis. Tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra.</p>
+                <p class="otherNominations">OTHER NOMINATIONS</p>
+                <p class="studio">STUDIO</p>
+                <p class="otherAwards">OTHER AWARDS</p>
+                <section class="otherNominees">
+                    <p class="otherNominees">Other Nominees:</p>
+                    <ul class="nominees"></ul>
+
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <main>
+    </main>
+    <a class="jump" href="#header">Go to Top</a>
+    <template>
+        <div class="movie_image"></div>
+        <h1 class="frontName">Name</h1>
+        <p class="year">YEAR </p>
+    </template>
+
+    <footer id="footer">
+    <p>&copy;Squad</p>
+    </footer>
+    <script defer src="JavaScript.js"></script>
+</body>
+
+</html>
