@@ -151,6 +151,7 @@ general Page------------------------------------*/
 
 .modal-movie-image {
     max-height: 70vh;
+    opacity: 0;
 }
 
 .modal-text {
@@ -158,6 +159,7 @@ general Page------------------------------------*/
     max-width: 100%;
     max-height: 95%;
     overflow-y: auto;
+    opacity: 0;
 }
 
 .modal-content p {
@@ -166,6 +168,48 @@ general Page------------------------------------*/
 
 .modal-open {
     overflow-y: hidden;
+}
+
+.animationAppear {
+    animation: appear .3s forwards ease-in-out;
+}
+
+.animationOpacityRise {
+    animation: opacityRise .5s .3s forwards;
+}
+
+@keyframes appear {
+    0% {
+        background-color: red;
+        width: 0%;
+        height: 0%;
+        background-color: #4f6789;
+        margin: 0 auto;
+        margin-top: 0;
+        padding: 0;
+    }
+
+    20% {
+        width: 0%;
+        height: 80%;
+    }
+
+    100% {
+        background-color: yellow;
+        width: 80%;
+        height: 80%;
+        background-color: #4f5457;
+        margin: 0 auto;
+        margin-top: 2em;
+        padding: 1em;
+    }
+}
+
+@keyframes opacityRise {
+
+    to {
+        opacity: 1;
+    }
 }
 
 /*▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
@@ -261,8 +305,8 @@ Movie Article-----------------------------------*/
     }
 
     .modal-content {
-        overflow-y: auto;
-        display: grid;
+        overflow-y: scroll;
+        display: block;
         grid-template-columns: 1fr;
         max-width: 90%;
         padding: .5em;
@@ -288,6 +332,7 @@ Movie Article-----------------------------------*/
     }
 
     .modal-movie-image {
+        display: block;
         max-width: 80%;
         height: auto;
         margin: auto;
